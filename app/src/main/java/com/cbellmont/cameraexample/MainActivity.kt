@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     private val resultCamera  = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val bitmap = result.data?.extras?.get("data") as Bitmap
-            binding.ivPicture.setImageBitmap(bitmap) 
+            binding.ivPicture.setImageBitmap(bitmap)
         }
     }
 }
