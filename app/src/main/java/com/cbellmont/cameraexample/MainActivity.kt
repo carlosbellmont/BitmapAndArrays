@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.bDownload.setOnClickListener {
+        binding.bFileExplorer.setOnClickListener {
             val intent = Intent()
             intent.type = "image/*"
             intent.action = Intent.ACTION_GET_CONTENT
-            resultGallery.launch(intent)
+            resultFileExplorer.launch(intent)
         }
 
         binding.bCamera.setOnClickListener {
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val resultGallery = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    private val resultFileExplorer = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             binding.ivPicture.setImageURI(result.data?.data)
         }
